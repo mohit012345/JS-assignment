@@ -1,0 +1,47 @@
+
+const nftCollection = [];
+
+function mintNFT(name, age, occupation, hairColor, eyeColor, creator, mintDate) {
+    const nft = {
+        name: name,
+        age: age,
+        occupation: occupation,
+        hairColor: hairColor,
+        eyeColor: eyeColor,
+        creator: creator,
+        mintDate: mintDate
+    };
+    nftCollection.push(nft);
+}
+
+function printNFTDetails(nft, index) {
+    console.log("NFT #" + (index + 1));
+    console.log("Name: " + nft.name);
+    console.log("Age: " + nft.age);
+    console.log("Occupation: " + nft.occupation);
+    console.log("Hair Color: " + nft.hairColor);
+    console.log("Eye Color: " + nft.eyeColor);
+    console.log("Creator: " + nft.creator);
+    console.log("Mint Date: " + nft.mintDate);
+    console.log("-------------------------");
+}
+
+function listNFTs() {
+    let i = 0;
+    while (i < nftCollection.length) {
+        printNFTDetails(nftCollection[i], i);
+        i++;
+    }
+}
+
+function getTotalSupply() {
+    return nftCollection.length;
+}
+
+mintNFT("Nitin choudhary", 25, "Software Engineer", "Green", "Blue", "Mukesh", "2024-01-01");
+mintNFT("Bhuvi Kumar", 19, "Teacher", "Black", "Yellow", "Mahi", "2022-09-05");
+mintNFT("Devu", 22, "Boxer", "Purpul", "Gold", "Anuj", "2021-12-27");
+
+listNFTs();
+
+console.log("Total Supply: " + getTotalSupply());
